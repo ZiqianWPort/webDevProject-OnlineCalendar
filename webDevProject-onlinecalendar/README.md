@@ -1,8 +1,3 @@
-# CSE330
-Team members:
-Jeffrey Wang - 497952 - jeffreyw2021
-Amanda - 498387 - amanda714
-
 [Link to website](http://ec2-52-14-126-140.us-east-2.compute.amazonaws.com/~JeffreyWang/module5/module5-group-module5-497952-498387/calendar.html#)
 
 
@@ -25,6 +20,3 @@ Amanda - 498387 - amanda714
 |   test   |    t      |    1    |
 |  amanda  |    a      |    3    |
 |  jeffrey |    t      |    2    |
-
-
-Grade: 75/75
