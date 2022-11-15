@@ -1,0 +1,192 @@
+/* Reference: https://getbootstrap.com/docs/5.2/getting-started/introduction/ */
+
+/* ------------------ general style ------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 12px;
+  line-height: 1.6;
+}
+a:link {
+  color: (internal value);
+  text-decoration: underline;
+  cursor: auto;
+  font-size: 24px;
+}
+a:link.add {
+  color: (internal value);
+  text-decoration: underline;
+  cursor: auto;
+  font-size: 12px;
+}
+body {
+  color: #212121;
+  font-size: 1.5em;
+}
+ul {
+  list-style: none;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  }
+  
+  .close:hover{
+  color: rgb(0, 0, 0);
+  }
+
+/* ------------------ calendar card style------------------ */
+.card {
+  width: 90%;
+  max-width: 100%;
+  min-height: 80%;
+  margin: 7em auto;
+  display: grid;
+}
+
+.card-header, .card-footer {
+  padding: 0 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.2rem;
+}
+.card-body {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+.card-body-days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+.card-body-days li{
+  flex: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #7D8994;
+  margin: 0 1px;
+}
+
+.card-body-dates {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+.card-body-dates li {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  position: relative;
+}
+.card-body-dates li:hover{
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+.display-date{
+  text-decoration: none;
+  color: #363636;
+}
+.prev .display-date, .next .display-date {
+  color:#ccc;
+}
+
+.card-footer {
+  color: white;
+  font-weight: bold;
+}
+.card-footer .add {
+  border: 1px lightblue;
+  width: 5rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.tag-checkbox{
+  margin-left: 0.5em;
+  margin-right: 0.75em;
+}
+
+.add:hover, .add:focus {
+  cursor: pointer;
+  background-color: lightblue;
+  transform: scale(1);
+}
+
+/* ------------------ event style------------------ */
+
+#event-total {
+  width: 80%;
+  max-width: 80%;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  grid-auto-rows: fit-content(1em);
+}
+
+.event-inst{
+  width: 100%;
+  height: 3em;
+  background:lightgray;
+  display: flex;
+  margin: 0.5em 1em 0.5em 1em;
+}
+
+#event-total  li p{
+  margin: auto;
+}
+#event-total button{
+  border: none;
+  font-size: 1em;
+  font-family: sans-serif;
+  background-color: #d6d6d6cf;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 0px;
+  cursor:pointer;
+
+}
+
+/* ------------------ Modal float window style------------------ */
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  }
+
+  #modal-btn-log{
+    margin: 1em;
+  }
+
+  .modal {
+    padding-top: 10%;
+    display: none;
+    position: fixed; 
+    z-index: 9; 
+    width: 100%; 
+    height: 100%; 
+    left: 0;
+    top: 0;
+    overflow: auto;
+    }
+

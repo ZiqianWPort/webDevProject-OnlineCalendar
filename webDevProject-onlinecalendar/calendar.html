@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title> Module5 Group Calendar</title>
+    <link rel="stylesheet" href="calendarStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <a href="#" id="modal-btn-log">Register | Log In</a>
+    
+    <button id="logout-btn" hidden>Log Out</button>
+
+    <div id="myModal-log" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Registration</p>
+            <ul class="sub">
+                <li>Enter New Username:
+                    <input type="text" name="reg_username" id="regusername" placeholder="Register name">
+                </li>
+                <li>Enter New Password:
+                    <input type="password" name="reg_password" id="regpassword" placeholder="Password">
+                </li>
+                <li><input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>"></li>
+                <li><button id="register_btn">Register</button></li>
+            </ul>
+            <p>Log In</p>
+            <ul class="sub">
+                <li>Enter Existing User:
+                    <input type="text" name="log_username" id="username" placeholder="Username">
+                </li>
+                <li>Enter Your Password:
+                    <input type="password" name="log_password" id="password" placeholder="Password">
+                </li>
+                <li><input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>"></li>
+                <li><button id="login_btn">Login</button></li>
+            </ul>
+            <script src="accountFunction.js"></script>
+
+        </div>
+    </div>
+
+    <!--the calendar -->
+    <main class="card">
+
+        <div class="card-header">
+            <button class="prev" id="prev_month_btn">&#10094;</button>
+
+            <h3 id="month_year">January 2022</h3>
+            <button class="next" id="next_month_btn">&#10095;</button>
+
+        </div>
+        <div class="card-body">
+            <ul class="card-body-days">
+                <li>sun</li>
+                <li>mon</li>
+                <li>tue</li>
+                <li>wed</li>
+                <li>thu</li>
+                <li>fri</li>
+                <li>sat</li>
+            </ul>
+            <ul class="card-body-dates">
+            </ul>
+        </div>
+        <div class="card-footer">
+            <a href="#" class="add" id="modal-btn" style="text-align:center">add event</a>
+            <p id="cur_time">XX:XX</p>
+        </div>
+
+    </main>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Add Event Here</p>
+            <ul class="sub">
+                <li>Event Title:
+                    <input type="text" name="event_title" id="event_title" placeholder="Event Title">
+                </li>
+                <li>Date:
+                    <input type="date" id="event_date" name="event_date" value="2022-10-25">
+                </li>
+                <li>Time:
+                    <input type="time" id="event_time" value="01:23" min="00:00" max="23:00" required>
+                </li>
+                <li>Tags:
+                    work<input type="checkbox" id="event_tag1" class="event-tag-checkbox" name="tag-1" value="tag-1">
+                    home<input type="checkbox" id="event_tag2" class="event-tag-checkbox" name="tag-2" value="tag-2">
+                    school<input type="checkbox" id="event_tag3" class="event-tag-checkbox" name="tag-3" value="tag-3">
+                </li>
+                <li>Event Details:
+                    <input type="text" name="event_detail" id="event_detail" placeholder="Event Detail">
+                </li>
+                <li> Share Event to (optional):
+                    <input type="text" name="event_members" id="event_members" placeholder="user_id... e.g.2">
+                </li>
+                <li><button id="add-event_btn">Add Event</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- The Modal float window -->
+    <div id="myModal-edit" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Event Here</h3>
+            <ul class="sub">
+                <li>Event Title:
+                    <input type="text" id="edit_title" placeholder="Event Title">
+                </li>
+
+                <li>Date:
+                    <input type="date" id="edit_date" name="event_date" value="2022-10-25" min="1800-01-01"
+                        max="2050-01-01">
+                </li>
+                <li>Time:
+                    <input type="time" id="edit_time" value="01:23" min="00:00" max="23:00" required>
+                </li>
+                <li>Tags:
+                    work<input type="checkbox" id="edit_tag1" class="event-tag-checkbox" name="tag-1" value="tag-1">
+                    home<input type="checkbox" id="edit_tag2" class="event-tag-checkbox" name="tag-2" value="tag-2">
+                    school<input type="checkbox" id="edit_tag3" class="event-tag-checkbox" name="tag-3" value="tag-3">
+                </li>
+                <li>Event Details:
+                    <input type="text" name="event_detail" id="edit_detail" placeholder="Event Detail">
+                </li>
+                <li><button id="edit_btn">Edit Event</button></li>
+                <li>Share:</li>
+                <li>
+                    <input id="share_input" placeholder="id... ex: 2">
+                    <button id="share_btn">Share Event</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hidden-div">
+        <input type='hidden' id="hidden-username">
+        <input type='hidden' id="hidden-id" value="null">
+        <input type='hidden' id="hidden-date">
+        <input type='hidden' id="hidden-eid">
+        <input type='hidden' id="hidden-token" value="null">
+    </div>
+    <div id="event-total"></div>
+
+    <script src="calendarHelper.js"></script>
+    <script src="getDate.js"></script>
+    <script src="calendarFunction.js"></script>
+
+</body>
+</html>
