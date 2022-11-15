@@ -11,8 +11,8 @@ This code has been made public only for my personal portfolio purposes. If you a
 #
 
 <h3>Developers</h3>
-Yifei Li - git username: LiYifei1218<br>
 Ziqian Wang - git username: ZiqianWPort
+Amanda - amanda714
 
 #
 
