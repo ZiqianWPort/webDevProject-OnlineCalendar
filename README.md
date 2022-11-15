@@ -17,5 +17,5 @@ Amanda Deng - git username: amanda714
 #
 
 <h3>Project Description</h3>
-<p>Link to website: [http://34.204.146.87/~liyifei/m3/index.php](http://ec2-52-14-126-140.us-east-2.compute.amazonaws.com/~JeffreyWang/module5/module5-group-module5-497952-498387/calendar.html#)</p>
+<p>Link to website: http://ec2-52-14-126-140.us-east-2.compute.amazonaws.com/~JeffreyWang/module5/module5-group-module5-497952-498387/calendar.html#</p>
 <p>Please note that, since this project is co-developed and is running on my partner's AWS server, I don't have full control over the ip address and the status of the server instance. Therefore, in case this link does not function as expected, please download the code, make modification of ip address and database setting, and run it on an instance to try it out.</p>
